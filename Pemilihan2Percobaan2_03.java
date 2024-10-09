@@ -1,84 +1,79 @@
+import java.util.Scanner;
 
-import java.util.Scanner; 
 public class Pemilihan2Percobaan2_03 {
+
     public static void main(String[] args) {
+        
         Scanner input03 = new Scanner(System.in);
+
         int pilihan_menu, harga;
         String member;
-        Double diskon, total_harga;
+        Double total_bayar,diskon;
 
-        System.out.println("---------------------------------------");
-        System.out.println("============= MENU KAFE JTI ===========");
-        System.out.println("1. Rice Bowl");
-        System.out.println("2. ice Tea");
-        System.out.println("3. paket bundling (Rice Bowl + Ice Tea)");
-        System.out.println("---------------------------------------");
-
-        System.out.println("Masukkan angka dari menu yang dipilih = ");
-        pilihan_menu = input03.nextInt(); 
-    
-        input03.nextLine();  // Membersihkan buffer input
-        // Input apakah pengguna memiliki member
-        System.out.print("Apakah Punya Member (y/n) ? = ");
+        System.out.println("_________________________");
+        System.out.println("===== MENU KAFE JTI =====");
+        System.out.println("1. Ricebowl");
+        System.out.println("2. Ice Tea");
+        System.out.println("3. Paket Bundling (Ricebowl + Ice Tea");
+        System.out.println("__________________________");
+        System.out.println("masukkan angka dari menu yang di pilih = ");
+        pilihan_menu = input03.nextInt();
+        input03.nextLine();
+        System.out.println("Apakah punya member (y/n) ? = ");
         member = input03.nextLine();
-        System.out.println("---------------------------------------");
+        System.out.println("_________________________");
 
-        if (member.equalsIgnoreCase("y")) { 
-            diskon = 0.10;  // Diskon 10% untuk member
+        if (member.equalsIgnoreCase("y")) {
+            diskon = 0.10;
             System.out.println("Besar diskon = 10%");
-            if (pilihan_menu == 1){
-                harga= 14000;
-                System.out.println("Harga ricebowl = " + harga);
+            if (pilihan_menu == 1) {
+            harga = 14000;
 
-            } else if (pilihan_menu == 2){
-                harga= 3000;
-                System.out.println("Harga ice tea = " + harga);
-
-            } else if (pilihan_menu == 3){
-                harga= 15000;
-                System.out.println("Harga bundling = " + harga);
-
-            } else {
-                System.out.println("Masukkan pilihan menu dengan benar" ); 
-                input03.close();
-                return;
-            }
-            total_harga = harga - (harga * diskon);
-            System.out.println("Total bayar setelah diskon = " + total_harga);
-
-            
-            
-        //jika pembeli tidak memiliki member
-        if (member.equalsIgnoreCase("n")) { 
-             if (pilihan_menu == 1) {
-                harga = 14000;
-                System.out.println("Harga Rice Bowl = Rp " + harga);
+            System.out.println("Harga ricebowl = " + harga);
 
             } else if (pilihan_menu == 2) {
                 harga = 3000;
-                System.out.println("Harga Ice Tea = Rp " + harga);
-
+                System.out.println("Harga ice tea = " + harga);
+    
             } else if (pilihan_menu == 3) {
                 harga = 15000;
-                System.out.println("Harga Paket Bundling = Rp " + harga);
-
+                System.out.println("Harga bundling = " + harga);
+            
             } else {
-                System.out.println("Masukkan pilihan menu dengan benar.");
+                System.out.println("Masukkan pilihan menu dengan benar ");
                 input03.close();
-                return; // Menghentikan eksekusi program
+                return;
             }
+            total_bayar = harga - (harga * diskon);
+            System.out.println("Total harga setelah diskon = " + total_bayar);
+        }
+
+        else if (member.equalsIgnoreCase("n")) {
+            if (pilihan_menu == 1) {
+            harga = 14000;
+            System.out.println("Harga ricebowl = " + harga);
+
+            } else if (pilihan_menu == 2) {
+                harga = 3000;
+                System.out.println("Harga ice tea = " + harga);
+    
+            } else if (pilihan_menu == 3) {
+                harga = 15000;
+                System.out.println("Harga bundling = " + harga);
+            
+            } else {
+                System.out.println("Masukkan pilihan menu dengan benar ");
+                input03.close();
+                return;
+                
+            }
+
             System.out.println("Total bayar = " + harga);
         } else {
-          
-
-
+            System.out.println("member tidak valid");
         }
-        System.out.println("---------------------------------------------");
+        System.out.println("___________________________");
 
-      }
-      
-      input03.close();
-        
+        input03.close();
     }
 }
-
